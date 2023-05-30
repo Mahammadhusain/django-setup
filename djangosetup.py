@@ -21,7 +21,7 @@ L = ["STATICFILES_DIRS = [BASE_DIR / 'static'] \n", "MEDIA_ROOT =  BASE_DIR / 'm
 file1.writelines(L)
 file1.close()
 
-# Set path of image in (Url.py)
+# Set path of image in (Urls.py)
 open("urls.py", "r")
 line_index1 = 16
 
@@ -178,8 +178,8 @@ subprocess.run(f'python manage.py createsuperuser', shell=True)
 #  ------------------- Include App urls path in Project/urls.py ------------------------
 os.chdir(projectname)
 
-app_url_index = 22
-line_index2 = 24
+app_url_index = 23
+line_index2 = 25
 appurl = f'    path("", include("{appname}.urls")),'
 impath = ']+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)'
 with open('urls.py', 'r') as file_handler:
@@ -211,7 +211,6 @@ if run_options == 'N' or 'n':
     subprocess.run(f'python manage.py runserver', shell=True)
 else:
     print('-------------------- Have a good day ------------------')
-
 
 
 
